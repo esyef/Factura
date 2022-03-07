@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Factura
 {
-    public partial class Form1 : Form
+    public partial class GenerarFactura : Form
     {
-        public Form1()
+        public GenerarFactura()
         {
             InitializeComponent();
         }
