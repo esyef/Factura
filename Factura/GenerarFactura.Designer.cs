@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtEstrato = new System.Windows.Forms.TextBox();
-            this.Consumo = new System.Windows.Forms.Label();
-            this.txtConsumo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtBarrio = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.cbSeleccionar = new System.Windows.Forms.ComboBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtBarrio = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtConsumo = new System.Windows.Forms.TextBox();
+            this.Consumo = new System.Windows.Forms.Label();
+            this.txtEstrato = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,63 +53,29 @@
             this.groupBox1.Controls.Add(this.txtEstrato);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(447, 140);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // label1
+            // cbSeleccionar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Estrato";
+            this.cbSeleccionar.FormattingEnabled = true;
+            this.cbSeleccionar.Location = new System.Drawing.Point(0, 23);
+            this.cbSeleccionar.Name = "cbSeleccionar";
+            this.cbSeleccionar.Size = new System.Drawing.Size(432, 24);
+            this.cbSeleccionar.TabIndex = 2;
+            this.cbSeleccionar.SelectedValueChanged += new System.EventHandler(this.cbSeleccionar_SelectedValueChanged);
             // 
-            // txtEstrato
+            // txtDireccion
             // 
-            this.txtEstrato.Enabled = false;
-            this.txtEstrato.Location = new System.Drawing.Point(76, 72);
-            this.txtEstrato.Name = "txtEstrato";
-            this.txtEstrato.Size = new System.Drawing.Size(48, 23);
-            this.txtEstrato.TabIndex = 1;
-            // 
-            // Consumo
-            // 
-            this.Consumo.AutoSize = true;
-            this.Consumo.Location = new System.Drawing.Point(7, 104);
-            this.Consumo.Name = "Consumo";
-            this.Consumo.Size = new System.Drawing.Size(63, 16);
-            this.Consumo.TabIndex = 0;
-            this.Consumo.Text = "Estrato";
-            // 
-            // txtConsumo
-            // 
-            this.txtConsumo.Enabled = false;
-            this.txtConsumo.Location = new System.Drawing.Point(76, 101);
-            this.txtConsumo.Name = "txtConsumo";
-            this.txtConsumo.Size = new System.Drawing.Size(48, 23);
-            this.txtConsumo.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(166, 108);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Barrio";
-            // 
-            // txtBarrio
-            // 
-            this.txtBarrio.Enabled = false;
-            this.txtBarrio.Location = new System.Drawing.Point(251, 104);
-            this.txtBarrio.Name = "txtBarrio";
-            this.txtBarrio.Size = new System.Drawing.Size(176, 23);
-            this.txtBarrio.TabIndex = 1;
+            this.txtDireccion.Enabled = false;
+            this.txtDireccion.Location = new System.Drawing.Point(251, 74);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(176, 23);
+            this.txtDireccion.TabIndex = 1;
             // 
             // label3
             // 
@@ -120,32 +86,69 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Dirección";
             // 
-            // txtDireccion
+            // txtBarrio
             // 
-            this.txtDireccion.Enabled = false;
-            this.txtDireccion.Location = new System.Drawing.Point(251, 74);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(176, 23);
-            this.txtDireccion.TabIndex = 1;
+            this.txtBarrio.Enabled = false;
+            this.txtBarrio.Location = new System.Drawing.Point(251, 104);
+            this.txtBarrio.Name = "txtBarrio";
+            this.txtBarrio.Size = new System.Drawing.Size(176, 23);
+            this.txtBarrio.TabIndex = 1;
             // 
-            // cbSeleccionar
+            // label2
             // 
-            this.cbSeleccionar.FormattingEnabled = true;
-            this.cbSeleccionar.Location = new System.Drawing.Point(0, 23);
-            this.cbSeleccionar.Name = "cbSeleccionar";
-            this.cbSeleccionar.Size = new System.Drawing.Size(432, 24);
-            this.cbSeleccionar.TabIndex = 2;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(166, 108);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 16);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Barrio";
+            // 
+            // txtConsumo
+            // 
+            this.txtConsumo.Enabled = false;
+            this.txtConsumo.Location = new System.Drawing.Point(76, 101);
+            this.txtConsumo.Name = "txtConsumo";
+            this.txtConsumo.Size = new System.Drawing.Size(48, 23);
+            this.txtConsumo.TabIndex = 1;
+            // 
+            // Consumo
+            // 
+            this.Consumo.AutoSize = true;
+            this.Consumo.Location = new System.Drawing.Point(7, 104);
+            this.Consumo.Name = "Consumo";
+            this.Consumo.Size = new System.Drawing.Size(63, 16);
+            this.Consumo.TabIndex = 0;
+            this.Consumo.Text = "Consumo";
+            // 
+            // txtEstrato
+            // 
+            this.txtEstrato.Enabled = false;
+            this.txtEstrato.Location = new System.Drawing.Point(76, 72);
+            this.txtEstrato.Name = "txtEstrato";
+            this.txtEstrato.Size = new System.Drawing.Size(48, 23);
+            this.txtEstrato.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Estrato";
             // 
             // GenerarFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(473, 376);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Fira Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GenerarFactura";
             this.Text = "Generar Facturas";
+            this.Load += new System.EventHandler(this.GenerarFactura_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
