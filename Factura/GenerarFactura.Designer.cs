@@ -38,6 +38,12 @@
             this.Consumo = new System.Windows.Forms.Label();
             this.txtEstrato = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtSubtotalAlcantarillado = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSubTotalAcueducto = new System.Windows.Forms.TextBox();
+            this.txtValoPagar = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,15 +69,16 @@
             // cbSeleccionar
             // 
             this.cbSeleccionar.FormattingEnabled = true;
-            this.cbSeleccionar.Location = new System.Drawing.Point(0, 23);
+            this.cbSeleccionar.Location = new System.Drawing.Point(7, 23);
             this.cbSeleccionar.Name = "cbSeleccionar";
-            this.cbSeleccionar.Size = new System.Drawing.Size(432, 24);
+            this.cbSeleccionar.Size = new System.Drawing.Size(425, 24);
             this.cbSeleccionar.TabIndex = 2;
             this.cbSeleccionar.SelectedValueChanged += new System.EventHandler(this.cbSeleccionar_SelectedValueChanged);
             // 
             // txtDireccion
             // 
             this.txtDireccion.Enabled = false;
+            this.txtDireccion.Font = new System.Drawing.Font("Fira Code Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.Location = new System.Drawing.Point(251, 74);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(176, 23);
@@ -85,10 +92,12 @@
             this.label3.Size = new System.Drawing.Size(79, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Dirección";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtBarrio
             // 
             this.txtBarrio.Enabled = false;
+            this.txtBarrio.Font = new System.Drawing.Font("Fira Code Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBarrio.Location = new System.Drawing.Point(251, 104);
             this.txtBarrio.Name = "txtBarrio";
             this.txtBarrio.Size = new System.Drawing.Size(176, 23);
@@ -106,6 +115,7 @@
             // txtConsumo
             // 
             this.txtConsumo.Enabled = false;
+            this.txtConsumo.Font = new System.Drawing.Font("Fira Code Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConsumo.Location = new System.Drawing.Point(76, 101);
             this.txtConsumo.Name = "txtConsumo";
             this.txtConsumo.Size = new System.Drawing.Size(48, 23);
@@ -123,6 +133,7 @@
             // txtEstrato
             // 
             this.txtEstrato.Enabled = false;
+            this.txtEstrato.Font = new System.Drawing.Font("Fira Code Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstrato.Location = new System.Drawing.Point(76, 72);
             this.txtEstrato.Name = "txtEstrato";
             this.txtEstrato.Size = new System.Drawing.Size(48, 23);
@@ -137,13 +148,73 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Estrato";
             // 
+            // txtSubtotalAlcantarillado
+            // 
+            this.txtSubtotalAlcantarillado.Enabled = false;
+            this.txtSubtotalAlcantarillado.Location = new System.Drawing.Point(225, 180);
+            this.txtSubtotalAlcantarillado.Name = "txtSubtotalAlcantarillado";
+            this.txtSubtotalAlcantarillado.Size = new System.Drawing.Size(176, 23);
+            this.txtSubtotalAlcantarillado.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 183);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(191, 16);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Subtotal Alcantarillado";
+            this.label4.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(20, 214);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(151, 16);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Subtotal Acueducto";
+            this.label5.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // txtSubTotalAcueducto
+            // 
+            this.txtSubTotalAcueducto.Enabled = false;
+            this.txtSubTotalAcueducto.Location = new System.Drawing.Point(225, 211);
+            this.txtSubTotalAcueducto.Name = "txtSubTotalAcueducto";
+            this.txtSubTotalAcueducto.Size = new System.Drawing.Size(176, 23);
+            this.txtSubTotalAcueducto.TabIndex = 1;
+            // 
+            // txtValoPagar
+            // 
+            this.txtValoPagar.Enabled = false;
+            this.txtValoPagar.Location = new System.Drawing.Point(225, 250);
+            this.txtValoPagar.Name = "txtValoPagar";
+            this.txtValoPagar.Size = new System.Drawing.Size(176, 23);
+            this.txtValoPagar.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(20, 250);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 16);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Valor a Pagar";
+            this.label6.Click += new System.EventHandler(this.label3_Click);
+            // 
             // GenerarFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(473, 376);
+            this.ClientSize = new System.Drawing.Size(473, 428);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txtValoPagar);
+            this.Controls.Add(this.txtSubTotalAcueducto);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtSubtotalAlcantarillado);
+            this.Controls.Add(this.label4);
             this.Font = new System.Drawing.Font("Fira Code", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GenerarFactura";
@@ -152,6 +223,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -167,6 +239,12 @@
         private System.Windows.Forms.Label Consumo;
         private System.Windows.Forms.TextBox txtEstrato;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtSubtotalAlcantarillado;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtSubTotalAcueducto;
+        private System.Windows.Forms.TextBox txtValoPagar;
+        private System.Windows.Forms.Label label6;
     }
 }
 

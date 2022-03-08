@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Factura.Models.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -78,6 +79,14 @@ namespace Factura
                     txtDireccion.Text = suscriptor.Direccion;
                     txtEstrato.Text = suscriptor.Estrato.ToString();
 
+                    EstratosViewModel servicios = new EstratosViewModel();
+                    servicios.DefinirTarifas(suscriptor.Estrato);
+
+                    servicios.ConsumoTotal(suscriptor.Consumo);
+
+                    txtSubtotalAlcantarillado.Text = servicios.SubTotalAlcantarillado.ToString("C");
+                    txtSubTotalAcueducto.Text = servicios.SubTotalAgua.ToString("C");
+                    txtValoPagar.Text = servicios.TotalaPagar.ToString("C");
 
                 }
 
@@ -88,6 +97,16 @@ namespace Factura
 
           
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+     
         }
     }
 }

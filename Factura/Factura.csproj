@@ -82,6 +82,8 @@
     <Compile Include="Models\suscriptores.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\EstratosViewModel.cs" />
+    <Compile Include="Models\ViewModels\ServicioAcueducto.cs" />
     <Compile Include="Models\ViewModels\SuscriptoresViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
