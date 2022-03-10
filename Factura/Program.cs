@@ -16,7 +16,7 @@ namespace Factura
       {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GenerarFactura());
+            Application.Run(new Inicio());
         }
     }
 }
