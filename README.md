@@ -1,2 +1,2 @@
 # Factura - C# Windows forms
-Este proyecto corresponde al desarrollo de la actividad asiganada en la asignatura Programación Avanzada, en la carrera de Ingeneria de sistemas.
+Este proyecto corresponde al desarrollo de la actividad asignada en la asignatura Programación Avanzada, en la carrera de Ingeniería de sistemas.
