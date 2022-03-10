@@ -47,6 +47,8 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtAseo = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -207,12 +209,14 @@
             // 
             // btnImprimir
             // 
+            this.btnImprimir.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImprimir.Location = new System.Drawing.Point(289, 326);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(151, 45);
             this.btnImprimir.TabIndex = 2;
             this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // label7
@@ -233,6 +237,27 @@
             this.txtAseo.Size = new System.Drawing.Size(176, 23);
             this.txtAseo.TabIndex = 1;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(179, 413);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(119, 16);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "www.yefweb.com";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir.Location = new System.Drawing.Point(170, 327);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(113, 44);
+            this.btnSalir.TabIndex = 4;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // GenerarFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -240,7 +265,9 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(474, 397);
+            this.ClientSize = new System.Drawing.Size(474, 438);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtAseo);
@@ -255,7 +282,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GenerarFactura";
             this.Text = "Generar Facturas";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.GenerarFactura_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -285,6 +311,8 @@
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtAseo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
 
