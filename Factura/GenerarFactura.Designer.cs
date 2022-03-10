@@ -44,6 +44,9 @@
             this.txtSubTotalAcueducto = new System.Windows.Forms.TextBox();
             this.txtValoPagar = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtAseo = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -179,7 +182,7 @@
             // txtSubTotalAcueducto
             // 
             this.txtSubTotalAcueducto.Enabled = false;
-            this.txtSubTotalAcueducto.Location = new System.Drawing.Point(225, 211);
+            this.txtSubTotalAcueducto.Location = new System.Drawing.Point(225, 207);
             this.txtSubTotalAcueducto.Name = "txtSubTotalAcueducto";
             this.txtSubTotalAcueducto.Size = new System.Drawing.Size(176, 23);
             this.txtSubTotalAcueducto.TabIndex = 1;
@@ -187,7 +190,7 @@
             // txtValoPagar
             // 
             this.txtValoPagar.Enabled = false;
-            this.txtValoPagar.Location = new System.Drawing.Point(225, 250);
+            this.txtValoPagar.Location = new System.Drawing.Point(225, 266);
             this.txtValoPagar.Name = "txtValoPagar";
             this.txtValoPagar.Size = new System.Drawing.Size(176, 23);
             this.txtValoPagar.TabIndex = 1;
@@ -195,22 +198,55 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 250);
+            this.label6.Location = new System.Drawing.Point(20, 273);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 16);
             this.label6.TabIndex = 0;
             this.label6.Text = "Valor a Pagar";
             this.label6.Click += new System.EventHandler(this.label3_Click);
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Location = new System.Drawing.Point(289, 326);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(151, 45);
+            this.btnImprimir.TabIndex = 2;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(20, 243);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 16);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Subtotal Aseo";
+            this.label7.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // txtAseo
+            // 
+            this.txtAseo.Enabled = false;
+            this.txtAseo.Location = new System.Drawing.Point(225, 236);
+            this.txtAseo.Name = "txtAseo";
+            this.txtAseo.Size = new System.Drawing.Size(176, 23);
+            this.txtAseo.TabIndex = 1;
+            // 
             // GenerarFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(473, 428);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(474, 397);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txtAseo);
             this.Controls.Add(this.txtValoPagar);
             this.Controls.Add(this.txtSubTotalAcueducto);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtSubtotalAlcantarillado);
@@ -219,6 +255,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GenerarFactura";
             this.Text = "Generar Facturas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.GenerarFactura_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -245,6 +282,9 @@
         private System.Windows.Forms.TextBox txtSubTotalAcueducto;
         private System.Windows.Forms.TextBox txtValoPagar;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtAseo;
     }
 }
 

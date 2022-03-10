@@ -9,6 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using System.IO;
+
+
 namespace Factura
 {
     public partial class GenerarFactura : Form
@@ -46,7 +52,10 @@ namespace Factura
 
         }
 
- 
+
+        public string layoutHtml;
+        string namePDf = DateTime.Now.ToString("ddyyyyMmss");
+
         private void cbSeleccionar_SelectedValueChanged(object sender, EventArgs e)
         {
 
@@ -86,13 +95,34 @@ namespace Factura
 
                     txtSubtotalAlcantarillado.Text = servicios.SubTotalAlcantarillado.ToString("C");
                     txtSubTotalAcueducto.Text = servicios.SubTotalAgua.ToString("C");
+                    txtAseo.Text = servicios.TarifaAseo.ToString("C");
                     txtValoPagar.Text = servicios.TotalaPagar.ToString("C");
+
+                    // obtener día
+                    var obtenerDia = DateTime.Now.Day;
+                    var diaSugerido = obtenerDia + 10;
+
+                    layoutHtml = Properties.Resources.template.ToString();
+
+                    layoutHtml = layoutHtml.Replace("@CONTRATO", namePDf);
+                    layoutHtml = layoutHtml.Replace("@REFERENCIA", DateTime.Now.ToString("ddyyyyss"));
+                    layoutHtml = layoutHtml.Replace("@NOMBRE", suscriptor.Nombre);
+                    layoutHtml = layoutHtml.Replace("@ESTRATO", suscriptor.Estrato.ToString());
+                    layoutHtml = layoutHtml.Replace("@BARRIO", suscriptor.Barrio);
+                    layoutHtml = layoutHtml.Replace("@DIRECCION", suscriptor.Direccion);
+                    layoutHtml = layoutHtml.Replace("@FECHA", DateTime.Now.ToString("MMMM") + " " +  diaSugerido + " " + "del " + DateTime.Now.ToString("yyyy"));
+                    layoutHtml = layoutHtml.Replace("@CONSUMO", suscriptor.Consumo.ToString());
+                    layoutHtml = layoutHtml.Replace("@SUBTOTALACUEDUCTO", servicios.SubTotalAgua.ToString("C"));
+                    layoutHtml = layoutHtml.Replace("@SUBTOTALALCANTARILLADO", servicios.SubTotalAlcantarillado.ToString("C"));
+                    layoutHtml = layoutHtml.Replace("@SUBTOTALASEO", servicios.SubTotalAgua.ToString("C"));
+                    layoutHtml = layoutHtml.Replace("@TOTALAPAGAR", servicios.TotalaPagar.ToString("C"));
+
 
                 }
 
             } catch(InvalidCastException ex)
             {
-
+                // 
             }
 
           
@@ -104,9 +134,51 @@ namespace Factura
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+      
+
+        private void btnImprimir_Click(object sender, EventArgs e)
         {
-     
+            
+            SaveFileDialog save = new SaveFileDialog();
+            save.FileName = namePDf + ".pdf";
+            //save.ShowDialog();
+
+            
+
+            if (save.ShowDialog() == DialogResult.OK )
+            {
+                using( FileStream stream = new FileStream(save.FileName, FileMode.Create))
+                {
+                     Document pdf = new Document(PageSize.A4, 20, 20, 20, 20);
+
+                    PdfWriter writer = PdfWriter.GetInstance(pdf, stream);
+
+
+                    pdf.Open();
+
+                    pdf.Add(new Phrase(""));
+
+                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.LogoWater, System.Drawing.Imaging.ImageFormat.Png);
+                    img.ScaleToFit(60, 60);
+                    img.Alignment = iTextSharp.text.Image.UNDERLYING;
+                    img.SetAbsolutePosition(pdf.LeftMargin, pdf.Top - 50);
+                    pdf.Add(img);
+
+                    // leer plantilla personalizada
+                    using ( StringReader sr = new StringReader(layoutHtml))
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdf, sr);
+                    }
+
+                    pdf.Close();
+
+                    stream.Close(); 
+
+                }
+
+
+            }
+
         }
     }
 }
